@@ -119,6 +119,22 @@ button, input, .btn, a.btn {
 }
 
 /* === Layout === */
+section {
+  padding: 80px 0;
+}
+
+section h2 {
+  margin: 20px 0 40px;
+}
+
+section h3 {
+  margin: 30px 0 10px;
+}
+
+.section-header {
+  text-align: center;
+}
+
 #optin {
   background-color: #3e4249;
   padding: 20px 0;
@@ -130,4 +146,8 @@ button, input, .btn, a.btn {
 
 #optin p {
   margin: 7px 0 0 0;
+}
+
+#who-benefits {
+  background-color: white;
 }
