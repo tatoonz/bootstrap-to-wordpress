@@ -52,6 +52,39 @@ button, input, .btn, a.btn {
   border-color: #d95131;
 }
 
+img {
+  max-width: 100%;
+}
+
+.modal-content {
+  background: url('../img/tile.jpg') top left repeat;
+}
+
+.badge.social {
+  background: #ccc;
+  font-size: 24px;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  line-height: 30px;
+  margin: 0 5px 20px 0;
+  border-radius: 50px;
+  color: white;
+  font-size: 1.25em;
+}
+
+.badge.social.twitter:hover {
+  background-color: #55acee;
+}
+
+.badge.social.facebook:hover {
+  background-color: #3b5998;
+}
+
+.badge.social.gplus:hover {
+  background-color: #db4b39;
+}
+
 /* === Hero === */
 #hero {
   background: url('../img/hero-bg.jpg') 50% 0 repeat fixed;
@@ -167,6 +200,44 @@ section h3 {
   background-size: cover;
   text-align: center;
   color: white;
+}
+
+#instructor {
+  background: white url('../img/brad-elvis.png') 90% -10px no-repeat;
+}
+
+#instructor h2 {
+  font-size: 1.725em;
+  margin: 0 0 20px;
+}
+
+#instructor h3 {
+  font-size: 1.25em;
+}
+
+#instructor .num {
+  display: table;
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  line-height: 24px;
+  height: 140px;
+  width: 140px;
+  text-align: center;
+  background-color: #dd5638;
+  border-radius: 100%;
+  text-rendering: optimizeLegibility;
+}
+
+#instructor .num .num-content {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#instructor .num span {
+  display: block;
+  font-size: 20px;
+  font-weight: normal;
 }
 
 /* === CUSTOM ICON SPRITES === */
