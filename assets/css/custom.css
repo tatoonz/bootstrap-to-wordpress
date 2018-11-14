@@ -37,6 +37,15 @@ h4 {
   font-size: 18px;
 }
 
+a {
+  color: #dd5638;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #c9302c;
+}
+
 button, input, .btn, a.btn {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -297,6 +306,35 @@ section h3 {
 
 #signup .btn {
   font-size: 24px;
+}
+
+footer {
+  background-color: #3e4249;
+  color: white;
+  padding: 20px 0 10px;
+  font-size: 12px;
+}
+
+footer p {
+  margin: 0;
+}
+
+footer a {
+  color: white;
+  
+}
+
+footer a:hover {
+  color: #dd5638;
+}
+
+footer li.signup-link a {
+  color: #dd5638;
+}
+
+footer li.signup-link a:hover {
+  color: #dd5638;
+  font-weight: bold;
 }
 
 /* === CUSTOM ICON SPRITES === */
