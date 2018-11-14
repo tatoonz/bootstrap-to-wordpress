@@ -204,6 +204,33 @@ section h3 {
   margin: 30px 0 10px;
 }
 
+#primary {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.feature-image {
+  display: table;
+  width: 100%;
+}
+
+.feature-image-default {
+  background: url('../img/stuff-feature.jpg') no-repeat;
+  background-size: cover;
+}
+
+.feature-image-default-alt {
+  background: url('../img/hipster-stuff.jpg') no-repeat;
+  background-size: cover;
+}
+
+.feature-image h1 {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  color: white;
+}
+
 .section-header {
   text-align: center;
 }
@@ -339,6 +366,81 @@ footer li.signup-link a {
 footer li.signup-link a:hover {
   color: #dd5638;
   font-weight: bold;
+}
+
+/* === BLOG === */
+.post {
+  position: relative;
+  border: solid 1px #ddd;
+  background-color: white;
+  margin: 0 0 40px;
+  border-radius: 4px;
+}
+
+.post header,
+.post .post-excerpt {
+  padding: 20px;
+}
+
+.post header h1,
+.post header h3 {
+  margin: 0 0 15px;
+  padding: 0 0 15px;
+  border-bottom: solid 1px #ddd;
+}
+
+.post header h1 {
+  font-size: 24px;
+}
+
+.post-image {
+  height: auto;
+}
+
+.post-details {
+  font-size: 12px;
+  width: 90%;
+}
+
+.post-details i.fas {
+  padding-left: 10px;
+}
+
+.post-details i.fas:first-child {
+  padding: 0;
+}
+
+/* === COMMENTS === */
+.post-comments-badge {
+  height: 70px;
+  width: 70px;
+  position: absolute;
+  top: 25px;
+  right: 20px;
+  border: none;
+  border-radius: 100%;
+  background-color: #79b044;
+  text-align: center;
+  display: table;
+}
+
+.post-comments-badge a {
+  display: table-cell;
+  vertical-align: middle;
+  color: white;
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.post-comments-badge i.fas {
+  display: block;
+  font-size: 15px;
+  padding: 0;
+  margin-bottom: 4px;
+}
+
+.post-comments-badge:hover {
+  background-color: #8bc653;
 }
 
 /* === CUSTOM ICON SPRITES === */
