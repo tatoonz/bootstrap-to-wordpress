@@ -19,6 +19,8 @@ services:
       WORDPRESS_LOGGED_IN_SALT: "g,zlWl5tuviHrgX!?9xCXu$$&+o>#ia|zAg`[5`1xO*wnS(Vic>_}*]IO$$)$$u<**R"
       WORDPRESS_NONCE_SALT: "UV|M{/SV6u Q(F}I_P-[HsOQ%!fw+/G[= mU*3`;%ZR-4|Ltw_,$$Xym1X P82u4F"
       WORDPRESS_DEBUG: 1
+    volumes:
+      - ./bootstrap2wordpress:/var/www/html/wp-content/themes/bootstrap2wordpress
 
   mysql:
     image: mysql:5.7
