@@ -139,9 +139,52 @@
 
       </main>
 
+      <!-- SIDEBAR -->
       <aside class="col-sm-4">
 
-      </aside>
+        <div class="widget">
+          <h4>Join Our Mailing List</h4>
+          <p>Keep up-to-date with the latest news, and we'll <strong>send you something special as a thank you!</strong></p>
+          <button class="btn btn-lg btn-success btn-block" data-toggle="modal" data-target="#myModal">Click here to subscribe</button>
+        </div>
+
+        <div class="widget">
+          <form>
+            <label for="sidebar-search" class="sr-only">Search the blog</label>
+            <input type="text" placeholder="Search the blog..." id="sidebar-search">
+          </form>
+        </div>
+
+        <div class="widget">
+          <h4>About Bootstrap to Wordpress</h4>
+          <p>Lorem ipsum dolor amet forage typewriter before they sold out, yuccie helvetica vape green juice post-ironic listicle. Everyday carry marfa sriracha next level hot chicken green juice, prism copper mug. Scenester gluten-free neutra, mlkshk leggings plaid disrupt chicharrones aesthetic tumeric freegan viral pop-up williamsburg. Etsy pabst microdosing brunch raw denim. Mlkshk chia blue bottle gluten-free four loko paleo +1 taiyaki cred cloud bread polaroid marfa.</p>
+        </div>
+
+
+        <div class="widget">
+          <h4>Recent Posts</h4>
+          <ul>
+            <li><a href="">Blog post #1</a></li>
+            <li><a href="">Blog post #1</a></li>
+            <li><a href="">Blog post #1</a></li>
+            <li><a href="">Blog post #1</a></li>
+            <li><a href="">Blog post #1</a></li>
+          </ul>
+        </div>
+
+        <div class="widget">
+          <h4>Categories</h4>
+          <ul>
+            <li><a href="">Category #1</a></li>
+            <li><a href="">Category #2</a></li>
+            <li><a href="">Category #3</a></li>
+            <li><a href="">Category #4</a></li>
+            <li><a href="">Category #5</a></li>
+            <li><a href="">Category #6</a></li>
+          </ul>
+        </div>
+
+      </aside><!-- SIDEBAR -->
 
     </div>
   </div>
@@ -173,6 +216,55 @@
       </div>
     </div>
   </footer>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="myModalLabel">
+            <i class="fa fa-envelope"></i> Subscribe to our Mailing List
+          </h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="close">
+            <span aria-hidden="true">&times;</span>
+            <span class="sr-only">Close</span>
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <p>
+            Simply enter your name and email! As a thank you for joining us, 
+            we're going to give you one of our best-selling courses, 
+            <em>for free!</em>
+          </p>
+
+          <form>
+            <div class="form-row">
+              <div class="form-group col-6">
+                <label for="subscribe-name" class="sr-only">Your first name</label>
+                <input type="text" class="form-control" id="subscribe-name" placeholder="Your first name">
+              </div>
+              <div class="form-group col-6">
+                <label for="subscribe-email" class="sr-only">and your email</label>
+                <input type="email" class="form-control" id="subscribe-email" placeholder="and your email">
+              </div>  
+            </div>
+            <button type="submit" class="btn btn-danger btn-block">Subscribe!</button>
+          </form>
+
+          <hr>
+
+          <p>
+            <small>
+              By provinding your email you consent to receiving occasional promotional emails &amp; newsletters.
+              <br>
+              No Spam. Just good stuff. We respect your privacy &amp; you may unsubscribe at any time.
+            </small>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="assets/js/jquery-3.3.1.min.js"></script>
   <script src="assets/js/popper-1.14.1.min.js"></script>
