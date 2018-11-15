@@ -1,0 +1,36 @@
+version: "3"
+
+services:
+  wordpress:
+    image: wordpress:4.9.8-php7.1-apache
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      WORDPRESS_DB_NAME: bootstrap2wordpress
+      WORDPRESS_TABLE_PREFIX: b2w_
+      WORDPRESS_DB_PASSWORD: example
+      WORDPRESS_AUTH_KEY: "[uZ:2qkaL$$3!4R6hYQJ.Tw)eU>/&vD=-bZC:go1gmqo0o%4s(]-mT+e<#INp#+Jt"
+      WORDPRESS_SECURE_AUTH_KEY: "8mBQ/7+{kVTC{=};>?|4]qx5>GzLdT2-]EE&yE|{3| `?<xi_J7^BW4|Q&<!OVIf"
+      WORDPRESS_LOGGED_IN_KEY: "(,&R3|]G2R:V`Q1-^1`kNkF#]As=r$$=sW!;CQ&OUlZ(PqO0t~:{.;<u]?[.cl>/L"
+      WORDPRESS_NONCE_KEY: "PW[[U&C>N:jhqkiYIJtHJ+:k0nP>fl$$T&<[l/+&H<]5.t|bQ)cpJ|!*,}qx]]68."
+      WORDPRESS_AUTH_SALT: "okr-fxT`Z|[;jN!LzzC_gPIR}-JswAiZ3|lGb=Ns boPJVh$m4)|/6^r>S[;sg_2"
+      WORDPRESS_SECURE_AUTH_SALT: ";b$$u}r{M`x|MP5KAe Dq3@|l (Y*,&ubhmS65:-*yRupB+|tC;(mWnigkl0QQ1]w"
+      WORDPRESS_LOGGED_IN_SALT: "g,zlWl5tuviHrgX!?9xCXu$$&+o>#ia|zAg`[5`1xO*wnS(Vic>_}*]IO$$)$$u<**R"
+      WORDPRESS_NONCE_SALT: "UV|M{/SV6u Q(F}I_P-[HsOQ%!fw+/G[= mU*3`;%ZR-4|Ltw_,$$Xym1X P82u4F"
+      WORDPRESS_DEBUG: 1
+
+  mysql:
+    image: mysql:5.7
+    container_name: b2w_mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: bootstrap2wordpress
+      MYSQL_ROOT_PASSWORD: example
+    volumes:
+      - ./db.sql:/docker-entrypoint-initdb.d/db.sql
+  
+  adminer:
+    image: adminer
+    ports:
+      - 8081:8080
