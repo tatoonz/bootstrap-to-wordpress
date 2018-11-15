@@ -24,35 +24,42 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'boostrap2wordpress' ); ?></a>
 
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$boostrap2wordpress_description = get_bloginfo( 'description', 'display' );
-			if ( $boostrap2wordpress_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $boostrap2wordpress_description; /* WPCS: xss ok. */ ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
+	<!-- Header -->
+	<header role="banner">
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'boostrap2wordpress' ); ?></button>
-			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'menu-1',
-				'menu_id'        => 'primary-menu',
-			) );
-			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+		<!-- Navbar -->
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+			<div class="container">
+				<a href="#" class="navbar-brand">
+					<img src="assets/img/logo.png" alt="Bootstrap to Wordpress">
+				</a>
+				
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-toggle="collapse"
+					data-target="#navbarNav"
+					aria-controls="navbarNav"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button>
 
-	<div id="content" class="site-content">
+				<?php
+					wp_nav_menu( array(
+						'theme_location'    => 'primary',
+						'depth'             => 2,
+						'container'         => 'div',
+						'container_class'   => 'collapse navbar-collapse',
+						'container_id'      => 'navbarNav',
+						'menu_class'        => 'nav navbar-nav ml-auto',
+						'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+						'walker'            => new WP_Bootstrap_Navwalker(),
+					) );
+				?>
+				
+			</div>
+		</nav>
+
+	</header>

@@ -44,7 +44,7 @@ if ( ! function_exists( 'boostrap2wordpress_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'boostrap2wordpress' ),
+			'primary' => esc_html__( 'Primary', 'boostrap2wordpress' ),
 		) );
 
 		/*
@@ -159,3 +159,5 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+// Register Custom Navigation Walker
+require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
