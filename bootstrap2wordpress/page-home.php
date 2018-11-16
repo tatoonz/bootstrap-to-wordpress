@@ -43,6 +43,23 @@ $who_section_image = !empty($who_section_image)
 $who_section_title = get_field('who_section_title', $page_id);
 $who_section_body = get_field('who_section_body', $page_id);  
 
+// course features section
+$features_section_image = get_field('features_section_image', $page_id);
+$features_section_image = !empty($features_section_image)
+  ? $features_section_image
+  : array(
+    'url' => get_template_directory_uri() . '/assets/img/icon-rocket.png',
+    'alt' => 'An icon of rocket'
+  );
+
+$features_section_title = get_field('features_section_title', $page_id);
+
+$features = new WP_Query(array(
+  'post_type' => 'course_feature',
+  'orderby' => 'ID',
+  'order' => 'ASC'
+));
+
 get_header();
 ?>
 
@@ -143,40 +160,17 @@ get_header();
     <div class="container">
 
       <div class="section-header">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon-rocket.png" alt="icon rocket">
+        <img src="<?php echo $features_section_image['url']; ?>" alt="<?php echo $features_section_image['alt']; ?>">
         <h2>Course Features</h2>
       </div>
 
       <div class="row">
-        <div class="col-sm-2">
-          <i class="ci ci-computer"></i>
-          <h4>Lifetime access to 80+ lectures</h4>
-        </div>
-
-        <div class="col-sm-2">
-          <i class="ci ci-watch"></i>
-          <h4>10+ hours of HD video content</h4>
-        </div>
-
-        <div class="col-sm-2">
-          <i class="ci ci-calendar"></i>
-          <h4>30 days money back guarantee</h4>
-        </div>
-
-        <div class="col-sm-2">
-          <i class="ci ci-community"></i>
-          <h4>Access to a community of like-minded students</h4>
-        </div>
-
-        <div class="col-sm-2">
-          <i class="ci ci-instructor"></i>
-          <h4>Direct access to the instructor</h4>
-        </div>
-
-        <div class="col-sm-2">
-          <i class="ci ci-device"></i>
-          <h4>Accessible content on your mobile devices</h4>
-        </div>
+        <?php while ($features->have_posts()) : $features->the_post(); ?>
+          <div class="col-sm-2">
+            <i class="<?php the_field('course_feature_icon'); ?>"></i>
+            <h4><?php the_title(); ?></h4>
+          </div>
+        <?php endwhile; wp_reset_postdata(); ?>
       </div>
 
     </div>
