@@ -17,6 +17,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
+	<link rel="icon" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/favicon.ico">
+
+	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/font-awesome/css/fontawesome-all.css">
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
+
 	<?php wp_head(); ?>
 </head>
 
@@ -31,7 +37,7 @@
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
 			<div class="container">
 				<a href="#" class="navbar-brand">
-					<img src="assets/img/logo.png" alt="Bootstrap to Wordpress">
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/logo.png" alt="Bootstrap to Wordpress">
 				</a>
 				
 				<button
