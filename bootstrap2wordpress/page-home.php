@@ -2,6 +2,17 @@
 /*
     Template Name: Home Page
 */
+$page_id = 9;
+
+$prelaunch_price = get_post_meta($page_id, 'prelaunch_price', true);
+$launch_price = get_post_meta($page_id, 'launch_price', true);
+$final_price = get_post_meta($page_id, 'final_price', true);
+
+$course_url = get_post_meta($page_id, 'course_url', true);
+$course_button_text = get_post_meta($page_id, 'course_button_text', true);
+
+$optin_text = get_post_meta($page_id, 'optin_text', true);
+$optin_button_text = get_post_meta($page_id, 'optin_button_text', true);
 
 get_header();
 ?>
@@ -15,25 +26,25 @@ get_header();
             <img class="logo" src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-badge.png" alt="Bootstrap to Wordpress">
           </div>
           <div class="col-sm-7 hero-text">
-            <h1>Bootstrop to Wordpress</h1>
-            <p class="lead">Earn An Extra $1k - $5k a Month by Learning to Code Your Very Own Responsive &amp; Custom Wordpress Websites with Bootstrap</p>
+            <h1><?php bloginfo('name'); ?></h1>
+            <p class="lead"><?php bloginfo('description'); ?></p>
             <div id="price-timeline">
               <div class="price active">
                 <h4>Pre-Launch Price <small>Ends soon!</small></h4>
-                <span>$149</span>
+                <span><?php echo $prelaunch_price; ?></span>
               </div>
               <div class="price">
                 <h4>Launch Price <small>Coming soon!</small></h4>
-                <span>$299</span>
+                <span><?php echo $launch_price; ?></span>
               </div>
               <div class="price">
                   <h4>Final Price <small>Coming soon!</small></h4>
-                  <span>$399</span>
+                  <span><?php echo $final_price; ?></span>
               </div>
             </div>
 
             <div>
-              <a href="/" class="btn btn-lg btn-danger" role="button">Enroll &raquo;</a>
+              <a href="<?php echo $course_url; ?>" class="btn btn-lg btn-danger" role="button"><?php echo $course_button_text; ?></a>
             </div>
           </div>
         </div>
@@ -46,10 +57,7 @@ get_header();
     <div class="container">
       <div class="row">
         <div class="col-sm-8">
-          <p class="lead">
-            <strong class="font-weight-bold">Subscribe to our mailing list.</strong>
-            We'll send something special as a thank you.
-          </p>
+          <p class="lead"><?php echo $optin_text; ?></p>
         </div>
         <div class="col-sm-4">
           <button 
@@ -57,7 +65,7 @@ get_header();
             data-toggle="modal"
             data-target="#myModal"
           >
-            Click here to subscribe
+            <?php echo $optin_button_text; ?>
           </button>
         </div>
       </div>
