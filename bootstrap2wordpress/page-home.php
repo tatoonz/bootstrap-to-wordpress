@@ -4,6 +4,7 @@
 */
 $page_id = 9;
 
+// hero section
 $prelaunch_price = get_post_meta($page_id, 'prelaunch_price', true);
 $launch_price = get_post_meta($page_id, 'launch_price', true);
 $final_price = get_post_meta($page_id, 'final_price', true);
@@ -14,6 +15,7 @@ $course_button_text = get_post_meta($page_id, 'course_button_text', true);
 $optin_text = get_post_meta($page_id, 'optin_text', true);
 $optin_button_text = get_post_meta($page_id, 'optin_button_text', true);
 
+// boot your income section
 $income_feature_image = get_field('income_feature_image', $page_id);
 $income_feature_image = !empty($income_feature_image)
   ? $income_feature_image
@@ -29,6 +31,17 @@ $income_reason_1_description = get_field('reason_1_description', $page_id);
 $income_reason_2_title = get_field('reason_2_title', $page_id);
 $income_reason_2_description = get_field('reason_2_description', $page_id);
 
+// who should take this course section
+$who_section_image = get_field('who_section_image', $page_id);
+$who_section_image = !empty($who_section_image)
+  ? $who_section_image
+  : array(
+    'url' => get_template_directory_uri() . '/assets/img/icon-pad.png',
+    'alt' => 'An icon of pad'
+  );
+
+$who_section_title = get_field('who_section_title', $page_id);
+$who_section_body = get_field('who_section_body', $page_id);  
 
 get_header();
 ?>
@@ -115,39 +128,12 @@ get_header();
   <section id="who-benefits">
     <div class="container">
       <div class="section-header">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon-pad.png" alt="icon pad">
-        <h2>Who Should Take This Course?</h2>
+        <img src="<?php echo $who_section_image['url']; ?>" alt="<?php echo $who_section_image['alt']; ?>">
+        <h2><?php echo $who_section_title; ?></h2>
       </div>
 
       <div class="row">
-        <div class="col-sm-8 offset-sm-2">
-          <h3>Graphic &amp; Web Designers</h3>
-          <p>Graphic designers are extremely talented, but ask them to code their designs and they’ll freeze up! This leaves them with no other choice but to hire a web developer. Any professional graphic designers knows web developers can be expensive.</p>
-          <p>If you’re a designer, learning to code your own WordPress websites can change your business entirely! Now, not only are you a great designer, but you’re a skillful developer, too! This puts you in a position to <strong>make an extra $1,000 – $5,000 per project.</strong></p>
-        </div>
-
-        <div class="col-sm-8 offset-sm-2">
-          <h3>Entrepreneurs</h3>
-          <p>Entrepreneurs have big dreams, and in many cases, shoestring budgets. In order to survive in the cut-throat world of the Startup company, it’s a necessity to have a world-class website. However, world-class websites come with a large price tag.</p>
-          <p>If you can learn how to build a high-quality startup website by yourself, then you’ve just saved yourself a lot of cash, <strong>tens of thousands of dollars in many cases.</strong></p>
-        </div>
-
-        <div class="col-sm-8 offset-sm-2">
-          <h3>Employees</h3>
-          <p>Any company knows the education & training of their employees is key to a thriving team.</p>
-          <p>Depending on the type of company you work for, if you understand how to code, and can develop CMS driven websites, that gives you <strong>negotiating power for a better position, or a higher salary.</strong></p>
-        </div>
-
-        <div class="col-sm-8 offset-sm-2">
-          <h3>Code Hobbyists</h3>
-          <p>It’s fun to learn challenging new skills. Code hobbyists can add dynamic websites to their arsenal of tools to play with — you can even <strong>sell WordPress themes and plugins for cash!</strong> The possibilities are truly endless.</p>
-        </div>
-
-        <div class="col-sm-8 offset-sm-2">
-          <h3>People Looking for a New Career</h3>
-          <p>Are you out of work? Looking for a more rewarding job? Desire a career that can allow you to work almost anywhere in the world? Becoming a Web Developer might be the answer for you.</p>
-          <p><strong>Web developers are paid well, anywhere from $33,000 to more than $105,000 per year.</strong> They get to work at amazing companies that are changing the world, or they enjoy the ability to start their own companies, become location-independent and work from home, from coffee shops, in an airplane, on the beach, or wherever they want!</p>
-        </div>
+        <div class="col-sm-8 offset-sm-2"><?php echo $who_section_body; ?></div>
       </div>
     </div>
   </section>
