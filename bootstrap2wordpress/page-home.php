@@ -68,6 +68,10 @@ $project_features = new WP_Query(array(
   'order' => 'ASC'
 ));
 
+// course introduction section
+$featurette_title = get_field('featurette_title');
+$featurette_url = get_field('featurette_url');
+
 get_header();
 ?>
 
@@ -215,8 +219,11 @@ get_header();
     <div class="container">
       <div class="row">
         <div class="col-sm-8 offset-sm-2">
-          <h2>Watch the Course Introduction</h2>
-          <iframe width="100%" height="415" src="https://www.youtube.com/embed/q-mJJsnOHew" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <h2><?php echo $featurette_title; ?></h2>
+
+          <div class="embed-container">
+            <?php echo $featurette_url; ?>
+          </div>
         </div>
       </div>
     </div>

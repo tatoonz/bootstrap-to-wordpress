@@ -121,6 +121,24 @@ blockquote:before {
   display: none;
 }
 
+.embed-container { 
+  position: relative; 
+  padding-bottom: 56.25%;
+  overflow: hidden;
+  max-width: 100%;
+  height: auto;
+} 
+
+.embed-container iframe,
+.embed-container object,
+.embed-container embed { 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 /* === Hero === */
 #hero {
   background: url('../img/hero-bg.jpg') 50% 0 repeat fixed;
@@ -271,6 +289,10 @@ section h3 {
   background-size: cover;
   text-align: center;
   color: white;
+}
+
+#featurette .embed-container {
+  height: 415px;
 }
 
 #instructor {
@@ -613,7 +635,7 @@ button[type="submit"]:hover {
     margin: 0 0 10px;
   }
 
-  #featurette iframe {
+  #featurette .embed-container {
     height: 240px;
   }
 
