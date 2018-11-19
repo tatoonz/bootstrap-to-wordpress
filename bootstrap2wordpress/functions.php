@@ -159,5 +159,16 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
-// Register Custom Navigation Walker
+/**
+ * Register Custom Navigation Walker
+ */ 
 require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
+
+/**
+ * Replaces the excerpt "more" text by a link
+ */
+function bootstrap2wordpress_excerpt_more($more) {
+	global $post;
+	return '... <a href="' . get_permalink($post) . '">continue reading &raquo;</a>';
+}
+add_filter('excerpt_more', 'bootstrap2wordpress_excerpt_more');
