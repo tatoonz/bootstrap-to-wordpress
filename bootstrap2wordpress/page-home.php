@@ -72,6 +72,18 @@ $project_features = new WP_Query(array(
 $featurette_title = get_field('featurette_title');
 $featurette_url = get_field('featurette_url');
 
+// instructor section
+$instructor_section_title = get_field('instructor_section_title');
+$instructor_name = get_field('instructor_name');
+$instructor_twitter_username = get_field('instructor_twitter_username');
+$instructor_facebook_username = get_field('instructor_facebook_username');
+$instructor_google_plus_username = get_field('instructor_google_plus_username');
+$instructor_bio_excerpt = get_field('instructor_bio_excerpt');
+$instructor_full_bio = get_field('instructor_full_bio');
+$instructor_students = get_field('instructor_students');
+$instructor_reviews = get_field('instructor_reviews');
+$instructor_courses = get_field('instructor_courses');
+
 get_header();
 ?>
 
@@ -238,25 +250,23 @@ get_header();
 
           <div class="row">
             <div class="col-lg-8">
-              <h2>Your Instructor <small class="text-muted">Brad Hussey</small></h2>
+              <h2><?php echo $instructor_section_title; ?> <small class="text-muted"><?php echo $instructor_name; ?></small></h2>
             </div>
             <div class="col-lg-4">
-              <a href="httsp://twitter.com/bradhussey" target="_blank" class="badge social twitter">
+              <a href="https://twitter.com/<?php echo $instructor_twitter_username; ?>" target="_blank" class="badge social twitter">
                 <i class="fab fa-twitter"></i>
               </a>
-              <a href="httsp://facebook.com/bradhussey" target="_blank" class="badge social facebook">
+              <a href="https://facebook.com/<?php echo $instructor_facebook_username; ?>" target="_blank" class="badge social facebook">
                 <i class="fab fa-facebook-f"></i>
               </a>
-              <a href="httsp://plus.google.com/+BradHussey" target="_blank" class="badge social gplus">
+              <a href="https://plus.google.com/<?php echo $instructor_google_plus_username; ?>" target="_blank" class="badge social gplus">
                 <i class="fab fa-google-plus-g"></i>
               </a>
             </div>
           </div>
 
-          <p class="lead">A highly skilled professional, Brad Hussey is a passionate and experienced web designer, developer, blogger and digital entrepreneur.</p>
-          <p>Hailing from North Of The Wall (Yellowknife, Canada), Brad made the trek to the Wet Coast (Vancouver, Canada) to educate and equip himself with the necessary skills to become a spearhead in his trade of solving problems on the web, crafting design solutions, and speaking in code.</p>
-          <p>Brad's determination and love for what he does has landed him in some pretty interesting places with some neat people. He's had the privilege of working with, and providing solutions for, numerous businesses, big &amp; small, across the Americas.</p>
-          <p>Brad builds custom websites, and provides design solutions for a wide-array of clientele at his company, Brightside Studios. He regularly blogs about passive income, living your life to the fullest, and provides premium quality web design tutorials and courses for tens of thousands of amazing people desiring to master their craft.</p>
+          <p class="lead"><?php echo $instructor_bio_excerpt; ?></p>
+          <?php echo $instructor_full_bio; ?>
 
           <hr>
 
@@ -265,19 +275,19 @@ get_header();
           <div class="row">
             <div class="col-4">
               <div class="num">
-                <div class="num-content">41,000+ <span>students</span></div>
+                <div class="num-content"><?php echo $instructor_students; ?> <span>students</span></div>
               </div>
             </div>
 
             <div class="col-4">
               <div class="num">
-                <div class="num-content">568 <span>reviews</span></div>
+                <div class="num-content"><?php echo $instructor_reviews; ?> <span>reviews</span></div>
               </div>
             </div>
 
             <div class="col-4">
               <div class="num">
-                <div class="num-content">8 <span>courses</span></div>
+                <div class="num-content"><?php echo $instructor_courses; ?> <span>courses</span></div>
               </div>
             </div>
           </div>
