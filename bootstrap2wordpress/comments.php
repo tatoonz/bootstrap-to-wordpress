@@ -21,55 +21,55 @@ if ( post_password_required() ) {
 ?>
 
 <div id="comments" class="comments-area">
-
-	<?php
-	// You can start editing here -- including this comment!
-	if ( have_comments() ) :
-		?>
-		<h2 class="comments-title">
-			<?php
-			$boostrap2wordpress_comment_count = get_comments_number();
-			if ( '1' === $boostrap2wordpress_comment_count ) {
-				printf(
-					/* translators: 1: title. */
-					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'boostrap2wordpress' ),
-					'<span>' . get_the_title() . '</span>'
-				);
-			} else {
-				printf( // WPCS: XSS OK.
-					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $boostrap2wordpress_comment_count, 'comments title', 'boostrap2wordpress' ) ),
-					number_format_i18n( $boostrap2wordpress_comment_count ),
-					'<span>' . get_the_title() . '</span>'
-				);
-			}
-			?>
-		</h2><!-- .comments-title -->
-
-		<?php the_comments_navigation(); ?>
-
-		<ol class="comment-list">
-			<?php
-			wp_list_comments( array(
-				'style'      => 'ol',
-				'short_ping' => true,
-			) );
-			?>
-		</ol><!-- .comment-list -->
-
+	<div class="comments-wrap">
 		<?php
-		the_comments_navigation();
-
-		// If comments are closed and there are comments, let's leave a little note, shall we?
-		if ( ! comments_open() ) :
+		// You can start editing here -- including this comment!
+		if ( have_comments() ) :
 			?>
-			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'boostrap2wordpress' ); ?></p>
+			<h3 class="comments-title">
+				<?php
+				$boostrap2wordpress_comment_count = get_comments_number();
+				if ( '1' === $boostrap2wordpress_comment_count ) {
+					printf(
+						/* translators: 1: title. */
+						esc_html__( 'One comment on &ldquo;%1$s&rdquo;', 'boostrap2wordpress' ),
+						'<span>' . get_the_title() . '</span>'
+					);
+				} else {
+					printf( // WPCS: XSS OK.
+						/* translators: 1: comment count number, 2: title. */
+						esc_html( _nx( '%1$s comment on &ldquo;%2$s&rdquo;', '%1$s comments on &ldquo;%2$s&rdquo;', $boostrap2wordpress_comment_count, 'comments title', 'boostrap2wordpress' ) ),
+						number_format_i18n( $boostrap2wordpress_comment_count ),
+						'<span>' . get_the_title() . '</span>'
+					);
+				}
+				?>
+			</h3><!-- .comments-title -->
+
+			<?php the_comments_navigation(); ?>
+
+			<ol class="comment-list">
+				<?php
+				wp_list_comments( array(
+					'style'      => 'ol',
+					'short_ping' => true,
+				) );
+				?>
+			</ol><!-- .comment-list -->
+
 			<?php
-		endif;
+			the_comments_navigation();
 
-	endif; // Check for have_comments().
+			// If comments are closed and there are comments, let's leave a little note, shall we?
+			if ( ! comments_open() ) :
+				?>
+				<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'boostrap2wordpress' ); ?></p>
+				<?php
+			endif;
 
-	comment_form();
-	?>
+		endif; // Check for have_comments().
 
+		comment_form();
+		?>
+	</div>
 </div><!-- #comments -->
